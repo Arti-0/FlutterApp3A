@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'src/screens.dart';
+import 'home.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,8 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Game of Thrones Library',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
-        fontFamily: 'GameOfThrones',
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey),
       ),
       home: MyHomePage(),
     );

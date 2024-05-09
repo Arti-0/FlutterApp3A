@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'models.dart';
+import 'classes.dart';
 
 
 
@@ -18,11 +18,8 @@ class ApiService {
   static Future<List<Character>> fetchCharacters() async {
   final response = await http.get(Uri.parse('https://www.thronesapi.com/api/v2/Characters'));
   if (response.statusCode == 200) {
-    print(response.body);
     List<dynamic> data = json.decode(response.body);
-    print("data");
     List<Character> characters = List<Character>.from(data.map((x) => Character.fromJson(x)));
-    print(characters);
     return characters;
   } else {
     throw Exception('Failed to load characters from API');
